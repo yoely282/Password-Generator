@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator and Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav">
+        <div class="logo">Auth System</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#generator">Password Generator</a></li>
+            <li><a href="#authentication">Authentication</a></li>
+            <li><a href="#password-check">Password Check</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hamburger Navigation -->
+    <nav id="hamburger-nav">
+        <div class="logo">Auth System</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#generator" onclick="toggleMenu()">Password Generator</a></li>
+                <li><a href="#authentication" onclick="toggleMenu()">Authentication</a></li>
+                <li><a href="#password-check" onclick="toggleMenu()">Password Check</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <section id="home" class="content">
+            <h1 class="title">Welcome to the Auth System</h1>
+            <p>Generate a strong password and use it to authenticate yourself.</p>
+        </section>
+
+        <section id="generator" class="content">
+            <h2 class="title">Password Generator</h2>
+            <div class="generator-container">
+                <label for="passwordLength">Password Length:</label>
+                <input type="number" id="passwordLength" name="passwordLength" min="8" max="32" value="12">
+                <button onclick="generatePassword()">Generate Password</button>
+                <div id="generatedPassword"></div>
+                <div id="passwordStrength"></div>
+            </div>
+        </section>
+
+        <section id="authentication" class="content">
+            <h2 class="title">Authentication</h2>
+            <div class="auth-container">
+                <label for="authPassword">Enter Your Password:</label>
+                <input type="password" id="authPassword" name="authPassword">
+                <button onclick="authenticate()">Authenticate</button>
+                <div id="authResult"></div>
+            </div>
+        </section>
+
+        <section id="password-check" class="content">
+            <h2 class="title">Password Check</h2>
+            <div class="password-check-container">
+                <label for="userPassword">Enter a Password to Check:</label>
+                <input type="password" id="userPassword" name="userPassword">
+                <button onclick="checkPassword()">Check Password</button>
+                <div id="userPasswordStrength"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
